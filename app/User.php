@@ -31,6 +31,10 @@ class User extends Authenticatable
         return $this->hasMany('App\GroupUserRole');
     }
 
+    public function cardUserRoles() {
+        return $this->hasMany('App\CardUserRole');
+    }
+
     public function groups() {
         return $this->hasManyThrough('App\Group','App\GroupUserRole', 'user_id','id','id','group_id');
     }

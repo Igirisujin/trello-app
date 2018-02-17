@@ -27,9 +27,10 @@ class HomeController extends Controller
     {
         $userGroups = Auth::user()->groups;
 
-        $group = $userGroups->pop();
+        $group = $userGroups->find(1);
 
-        dd($group->roles);
+        #dd($group->cards->find(1)->tags->find(1)->groupCardTag->name);
+        dd($group->cards->find(1)->users);
         #return view('home');
     }
 }

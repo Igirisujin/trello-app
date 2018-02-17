@@ -10,7 +10,11 @@ class GroupRole extends Model
         return $this->belongsTo('App\Group');
     }
 
-    public function users() {
+    public function roles() {
+        return $this->hasMany('App\GroupUserRole');
+    }
+
+    public function groupUserRoles() {
         return $this->hasMany('App\GroupUserRole');
     }
 }
